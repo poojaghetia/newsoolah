@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.colorbuttom{
+    background-color: #0678e1; 
+    color: white
+}
+
+.custom.ng-select .ng-select-container .ng-value-container .ng-placeholder {
+
+    color: #4F5467;
+
+}
+.custom.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value
+{
+    width: 100%;
+}
+.custom .famfamfam-flags, .custom .ng-value span {
+    display: inline-block;
+}
+.custom .ng-value span {
+    margin-left: 5px;
+}
+.custom.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+    border-color: #e9ecef;
+    box-shadow: none;
+}
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';

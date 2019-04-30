@@ -1,0 +1,36 @@
+<div class="page-body">
+  <div class="row">
+    <div class="col-sm-12">
+    
+        <!-- <div class="card-header ripple">
+          <h5>
+            Contracts
+          </h5>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-12">
+            <label class="dt-cust-search f-right">
+              <div class="form-group">
+                <label>Search: </label>
+                <input type='text' class="form-control input-sm m-l-10" placeholder='Search'
+                  (keyup)='updateFilter($event)' />
+              </div>
+            </label>
+          </div>
+        </div> -->
+        <ngx-datatable #table class='material' [loadingIndicator]="loadingIndicator" [rows]="rows"
+          [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [reorderable]="reorderable"
+          [rowHeight]="'auto'" [limit]="10" [columns]="columns" [scrollbarH]="true">
+          <ng-template #hdrTmpl let-rowIndex="rowIndex" let-row="row" let-expanded="expanded"
+            ngx-datatable-row-detail-template>
+            <div class="text-center">
+              <button id="viewBtn" data-id="userData[rowIndex]._id" class="btn btn-primary btn-mini ripple light"
+                type="button" data-toggle="modal" (click)='view(userData[rowIndex]._id)'>View</button>
+            </div>
+          </ng-template>
+        </ngx-datatable>
+      <!-- </app-card> -->
+    </div>
+  </div>
+</div>
