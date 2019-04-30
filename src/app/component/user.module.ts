@@ -19,6 +19,7 @@ import { CustomerComponent } from './customer/customer.component';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { DatatableComponent } from './data-table/data-table.component';
+import { UiSwitchModule } from 'ng2-ui-switch';
 
 
 
@@ -30,7 +31,8 @@ import { DatatableComponent } from './data-table/data-table.component';
         ReactiveFormsModule,
         NgSelectModule,
         SharedModule,
-        NgxDatatableModule
+        NgxDatatableModule,
+        UiSwitchModule
     ],
     declarations: [
  CleanerComponent,

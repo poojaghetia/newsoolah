@@ -86,13 +86,23 @@ export class SharedService {
     }
 
 
-    contractslist() {
+    cleanerlist() {
         var authToken = this.getAuthToken();
         return this.http
             .get(`${this.baseUrl}cleaner/retrieve`).pipe(
             map((response: any) => {
                 return response;
             })
+            );
+    }
+
+    customerlist() {
+        var authToken = this.getAuthToken();
+        return this.http
+            .get(`${this.baseUrl}customer/retrieve`).pipe(
+                map((response: any) => {
+                    return response;
+                })
             );
     }
 

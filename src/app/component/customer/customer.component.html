@@ -1,3 +1,29 @@
-<p>
-  customer works!
-</p>
+<div class="page-body">
+  <div class="row">
+    <div class="col-sm-12">
+      <ngx-datatable #table class='material' [loadingIndicator]="loadingIndicator" [rows]="rows" [columnMode]="'force'"
+        [headerHeight]="50" [footerHeight]="50" [reorderable]="reorderable" [rowHeight]="'auto'" [limit]="10"
+        [columns]="columns" [scrollbarH]="true">
+        <ng-template #erdTmpl let-rowIndex="rowIndex" let-row="row" let-expanded="expanded"
+          ngx-datatable-row-detail-template>
+          <div class="text-center">
+            <ui-switch class="js-dynamic-state m-r-10" color="#3db3e1" switchColor="#fff" size="medium"
+              [disabled]="(userData[rowIndex].sTotalContracts)>0" [checked]="(userData[rowIndex].eStatus)"
+              (change)="onChange($event,userData[rowIndex]._id)"></ui-switch>
+          </div>
+        </ng-template>
+        <ng-template #hdrTmpl let-rowIndex="rowIndex" let-row="row" let-expanded="expanded"
+          ngx-datatable-row-detail-template>
+          <div class="text-center">
+            <button id="viewBtn" data-id="userData[rowIndex]._id" class="btn btn-primary btn-mini ripple light"
+              type="button" data-toggle="modal" (click)='view(userData[rowIndex]._id)'>View</button>
+            <button id="viewBtn" data-id="userData[rowIndex]._id" class="btn btn-primary btn-mini ripple light"
+              type="button" data-toggle="modal" (click)='edit(userData[rowIndex]._id)'>Edit</button>
+            <button id="viewBtn" data-id="userData[rowIndex]._id" class="btn btn-primary btn-mini ripple light"
+              type="button" data-toggle="modal" (click)='delete(userData[rowIndex]._id)'>Delete</button>
+          </div>
+        </ng-template>
+      </ngx-datatable>
+    </div>
+  </div>
+</div>

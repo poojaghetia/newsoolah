@@ -24,7 +24,8 @@ export class CleanerComponent implements OnInit {
 
   @ViewChild(DatatableComponent) table: DatatableComponent;
   @ViewChild('hdrTmpl') hdrTmpl: TemplateRef<any>;
-
+  @ViewChild("erdTmpl")
+  erdTmpl: TemplateRef<any>;
   constructor(public router: Router, private sharedservice:SharedService
    ) {
 
@@ -37,13 +38,18 @@ export class CleanerComponent implements OnInit {
       { prop: 'firstName', name: 'First Name' },
       { prop: 'lastName', name: 'Last Name' },
       { prop: 'mobileNo', name: 'Mobile No' },
-      { prop: 'email', name: 'Email' },
+      { prop: 'email', name: 'Email' }, {
+        prop: "Status",
+        name: "Status",
+        cellTemplate: this.erdTmpl,
+        sortable: false
+      },
       { prop: 'Action', name: "Action", cellTemplate: this.hdrTmpl, sortable: false }
     ]
 
   }
   setPage() {
-    this.sharedservice.contractslist().subscribe(data => {
+    this.sharedservice.cleanerlist().subscribe(data => {
 console.log(data);
 
       this.rows = [];
@@ -110,8 +116,18 @@ console.log(data);
   }
 
   view(id) {
+    console.log(id);
+    
     // this.router.navigate(['Contracts/Contract-details', id], { skipLocationChange: true })
 
+  }
+  edit(id){
+    console.log(id);
+    
+  }
+  delete(id){
+    console.log(id);
+    
   }
 
   getRowHeight(row) {
